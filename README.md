@@ -30,7 +30,7 @@
 <h3 align="center">Project Katana</h3>
 
   <p align="center">
-    Crossover between Psych Engine and newer versions of FNF (also known as V-Slice)
+    Wii Funkin Created for OSU Players with newground character called husk the samurai, online and backstory added in this mod, but total focus in matt mod
     <br />
     <a href="https://discord.gg/ZXGpk3jqJf"><strong>Explore Leaks on official discord katanamix »</strong></a>
     <br />

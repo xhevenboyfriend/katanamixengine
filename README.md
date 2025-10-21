@@ -62,7 +62,7 @@ It's meant to bring new visuals and features from newer versions of FNF and make
 |Character selector|Pausable cutscenes|
 |![](https://github.com/Psych-Slice/misc/blob/main/showcase/character.png?raw=true)|![](https://github.com/Psych-Slice/misc/blob/main/showcase/pause.png?raw=true)|
 |Online Stuff|Online Rework an infinite lore and backstory|
-|![](https://imgur.com/a/xEgtTrI)|![](https://imgur.com/a/xEgtTrI)|
+|![](https://imgur.com/a/concept-xEgtTrI)|![](https://imgur.com/a/concept-xEgtTrI)|
 <!-- GETTING STARTED -->
 ## Getting Started
 

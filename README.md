@@ -61,8 +61,8 @@ It's meant to bring new visuals and features from newer versions of FNF and make
 |![](https://github.com/Psych-Slice/misc/blob/main/showcase/freeplay.png?raw=true) | ![](https://github.com/Psych-Slice/misc/blob/main/showcase/result.png?raw=true)|
 |Character selector|Pausable cutscenes|
 |![](https://github.com/Psych-Slice/misc/blob/main/showcase/character.png?raw=true)|![](https://github.com/Psych-Slice/misc/blob/main/showcase/pause.png?raw=true)|
-|Online Stuff|Online Rework an infinite lore and backstory|
-|![](https://imgur.com/a/concept-xEgtTrI)|![](https://imgur.com/a/concept-xEgtTrI)|
+|Online Rework an infinite lore and backstory|
+|![](https://github.com/XHevenBoyfriend/KatanaMixEngine/blob/1a0196d09d058e75bc818be4ff2f5d8036a6ce76/art/wipimage_conceptual.png)|![](https://github.com/XHevenBoyfriend/KatanaMixEngine/blob/1a0196d09d058e75bc818be4ff2f5d8036a6ce76/art/wipimage_conceptual.png)|
 <!-- GETTING STARTED -->
 ## Getting Started
 

@@ -45,6 +45,12 @@
 #### Made With
 <img src="https://img.shields.io/badge/-HAXE-262626.svg?logo=haxe&style=for-the-badge">
 
+<!-- CREDIT -->
+## CREDITS
+Build v1.0 TEST BY KatanaPeter
+Codder: KatanaPeter
+Artist: SarahTheSlainer, KatanaPeter
+Composters: D4niz
 
 <!-- ABOUT THE PROJECT -->
 ## About

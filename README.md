@@ -32,7 +32,7 @@
   <p align="center">
     Crossover between Psych Engine and newer versions of FNF (also known as V-Slice)
     <br />
-    <a href="https://github.com/Psych-Slice/P-Slice/wiki"><strong>Explore the Wiki »</strong></a>
+    <a href="https://discord.gg/ZXGpk3jqJf"><strong>Explore Leaks on official discord katanamix »</strong></a>
     <br />
     <br />
     ·

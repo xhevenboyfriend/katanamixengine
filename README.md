@@ -48,8 +48,11 @@
 <!-- CREDIT -->
 ## CREDITS
 Build v1.0 TEST BY KatanaPeter
+
 Codder: KatanaPeter
+
 Artist: SarahTheSlainer, KatanaPeter
+
 Composters: D4niz
 
 <!-- ABOUT THE PROJECT -->

@@ -1,0 +1,36 @@
+{
+	"songs": [
+		[
+			"Yung",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Sporting",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "katana",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "Wiik 2 Katana",
+	"weekName": "Beat wiik 2",
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

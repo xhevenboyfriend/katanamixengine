@@ -1,0 +1,45 @@
+{
+	"songs": [
+		[
+			"Swordin",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Baiball",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Target Practice",
+			"face",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "katana",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "Wiik 1 Katana",
+	"weekName": "Beat wiik 1",
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

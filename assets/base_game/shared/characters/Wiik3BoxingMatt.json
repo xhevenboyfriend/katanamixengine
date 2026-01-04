@@ -1,0 +1,87 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [-13, 0],
+			"anim": "idle",
+			"fps": 24,
+			"name": "IDLE",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-44, -26],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "ATTACK LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-33, -76],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "ATTACK DOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [56, 22],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "ATTACK UP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-48, -31],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "ATTACK RIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-10, -10],
+			"anim": "blockLEFT",
+			"fps": 24,
+			"name": "BLOCK LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-3, -14],
+			"anim": "blockDOWN",
+			"fps": 24,
+			"name": "BLOCK DOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [0, -7],
+			"anim": "blockUP",
+			"fps": 24,
+			"name": "BLOCK UP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [5, -13],
+			"anim": "blockRIGHT",
+			"fps": 24,
+			"name": "BLOCK RIGHT",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/matt/MATTWIIK3",
+	"position": [20, 160],
+	"healthicon": "w3matt",
+	"flip_x": false,
+	"healthbar_colors": [168, 1, 1],
+	"camera_position": [-70, 60],
+	"sing_duration": 4,
+	"scale": 0.9,
+	"_editor_isPlayer": false
+}

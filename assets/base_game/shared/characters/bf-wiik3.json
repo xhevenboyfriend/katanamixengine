@@ -1,0 +1,87 @@
+{
+	"animations": [
+		{
+			"offsets": [0, 0],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "BF Idle Dance"
+		},
+		{
+			"offsets": [287, -10],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "attackleft"
+		},
+		{
+			"offsets": [288, -22],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "attackdown"
+		},
+		{
+			"offsets": [297, 42],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "attackup"
+		},
+		{
+			"offsets": [298, -1],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "attackright"
+		},
+		{
+			"offsets": [0, -20],
+			"indices": [],
+			"fps": 24,
+			"anim": "blockRIGHT",
+			"loop": false,
+			"name": "blockright"
+		},
+		{
+			"offsets": [3, -17],
+			"indices": [],
+			"fps": 24,
+			"anim": "blockLEFT",
+			"loop": false,
+			"name": "blockleft"
+		},
+		{
+			"offsets": [1, -42],
+			"indices": [],
+			"fps": 24,
+			"anim": "blockDOWN",
+			"loop": false,
+			"name": "blockdown"
+		},
+		{
+			"offsets": [2, -4],
+			"indices": [],
+			"fps": 24,
+			"anim": "blockUP",
+			"loop": false,
+			"name": "blockup"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/husk/WIIK3-husk",
+	"position": [20, 250],
+	"healthicon": "face",
+	"flip_x": true,
+	"healthbar_colors": [161, 161, 161],
+	"camera_position": [80, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

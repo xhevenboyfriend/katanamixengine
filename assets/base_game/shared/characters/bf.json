@@ -1,7 +1,39 @@
 {
 	"animations": [
 		{
-			"offsets": [190, -20],
+			"offsets": [240, -39],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "BF NOTE LEFT0"
+		},
+		{
+			"offsets": [99, -60],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "BF NOTE DOWN0"
+		},
+		{
+			"offsets": [10, 92],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "BF NOTE UP0"
+		},
+		{
+			"offsets": [-44, -16],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "BF NOTE RIGHT0"
+		},
+		{
+			"offsets": [173, -24],
 			"loop": false,
 			"fps": 24,
 			"anim": "singLEFTmiss",
@@ -9,7 +41,7 @@
 			"name": "BF NOTE LEFT MISS0"
 		},
 		{
-			"offsets": [30, -100],
+			"offsets": [35, -56],
 			"loop": false,
 			"fps": 24,
 			"anim": "singDOWNmiss",
@@ -17,7 +49,7 @@
 			"name": "BF NOTE DOWN MISS0"
 		},
 		{
-			"offsets": [50, 60],
+			"offsets": [3, 102],
 			"loop": false,
 			"fps": 24,
 			"anim": "singUPmiss",
@@ -25,7 +57,7 @@
 			"name": "BF NOTE UP MISS0"
 		},
 		{
-			"offsets": [40, -50],
+			"offsets": [286, -143],
 			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHTmiss",
@@ -33,54 +65,54 @@
 			"name": "BF NOTE RIGHT MISS0"
 		},
 		{
+			"offsets": [53, -6],
+			"loop": false,
+			"fps": 24,
+			"anim": "dodgeLEFT",
+			"indices": [],
+			"name": "dodge LEFT"
+		},
+		{
+			"offsets": [-10, 0],
+			"loop": false,
+			"fps": 24,
+			"anim": "dodgeRIGHT",
+			"indices": [],
+			"name": "dodge RIGHT"
+		},
+		{
+			"offsets": [60, 40],
+			"loop": false,
+			"fps": 24,
+			"anim": "dodgeUP",
+			"indices": [],
+			"name": "dodge UP"
+		},
+		{
+			"offsets": [90, 10],
+			"loop": false,
+			"fps": 24,
+			"anim": "dodgeDOWN",
+			"indices": [],
+			"name": "dodge DOWN"
+		},
+		{
+			"loop": false,
 			"offsets": [0, 0],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "HUSK Idle Dance"
-		},
-		{
-			"offsets": [134, 14],
-			"indices": [],
 			"fps": 24,
-			"anim": "singLEFT",
-			"loop": false,
-			"name": "HUSK NOTE LEFT0"
-		},
-		{
-			"offsets": [37, -106],
-			"indices": [],
-			"fps": 24,
-			"anim": "singDOWN",
-			"loop": false,
-			"name": "HUSK NOTE DOWN0"
-		},
-		{
-			"offsets": [-30, 39],
-			"indices": [],
-			"fps": 24,
-			"anim": "singUP",
-			"loop": false,
-			"name": "HUSK NOTE UP0"
-		},
-		{
-			"offsets": [-124, 3],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
-			"loop": false,
-			"name": "HUSK NOTE RIGHT0"
+			"name": "BF Idle Dance",
+			"indices": []
 		}
 	],
 	"vocals_file": "",
 	"no_antialiasing": false,
-	"image": "WEEKS-STUFF/HUSK",
-	"position": [20, 220],
-	"healthicon": "bf",
+	"image": "characters/husk/husk",
+	"position": [20, 250],
+	"healthicon": "face",
 	"flip_x": true,
 	"healthbar_colors": [161, 161, 161],
-	"camera_position": [170, 0],
+	"camera_position": [60, 0],
 	"sing_duration": 4,
 	"scale": 1,
 	"_editor_isPlayer": true

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BM_MattKRWiik2.png">
+	<!-- Created with Adobe Animate version 24.0.8.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="MATTATTACK0000" x="0" y="0" width="602" height="681" frameX="-142" frameY="0" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0001" x="602" y="0" width="496" height="683" frameX="-142" frameY="0" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0002" x="1098" y="0" width="435" height="683" frameX="-142" frameY="0" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0003" x="1533" y="0" width="622" height="654" frameX="-139" frameY="-20" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0004" x="2155" y="0" width="585" height="654" frameX="-139" frameY="-20" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0005" x="2740" y="0" width="783" height="624" frameX="-113" frameY="-31" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0006" x="3523" y="0" width="1117" height="624" frameX="-113" frameY="-31" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0007" x="4640" y="0" width="1544" height="720" frameX="-97" frameY="-29" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0009" x="0" y="720" width="2807" height="1463" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0010" x="2807" y="720" width="2975" height="1537" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0011" x="5782" y="720" width="675" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0012" x="5782" y="720" width="675" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0013" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0014" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0015" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0016" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0017" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0018" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0019" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0020" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0021" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0022" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0023" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0024" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0025" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0026" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0027" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0028" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0029" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0030" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0031" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0032" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0033" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0034" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0035" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0036" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0037" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0038" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+	<SubTexture name="MATTATTACK0039" x="6457" y="720" width="657" height="624" frameX="-123" frameY="-32" frameWidth="3098" frameHeight="1569"/>
+</TextureAtlas>

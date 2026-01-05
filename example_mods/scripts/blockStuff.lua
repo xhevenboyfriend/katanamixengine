@@ -45,7 +45,7 @@ local function detectFight()
         'boxing-husk',
         'boxing-husk-alt',
         'bf-lightglove',
-        '',
+        'wiik3bf',
         ''
     }
     local matt = {
@@ -80,7 +80,6 @@ function onCreatePost()
         'Place Holderreborn',
         'Place Holderunbound',
         'Blastout',
-        'Zero Mania',
         'Place Holderalarmiing',
         --'Edgelord',
         --'Revenge',

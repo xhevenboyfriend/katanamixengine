@@ -1,5 +1,5 @@
 {
-	"player1": "bf",
+	"player1": "husk",
 	"player2": "Wiik2Matt",
 	"events": [],
 	"notes": [
@@ -28,7 +28,7 @@
 			"mustHitSection": false
 		}
 	],
-	"gfVersion": "gf",
+	"gfVersion": "pacifica",
 	"offset": 0,
 	"disableNoteRGB": false,
 	"song": "Sporting",

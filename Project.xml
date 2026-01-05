@@ -5,14 +5,14 @@
 	xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app unless="PROFILE_BUILD || mobile" title="Friday Night Funkin': P-Slice Engine"
-		file="PSliceEngine" packageName="com.mikolka9144.pslice" package="com.mikolka9144.pslice"
+	<app unless="PROFILE_BUILD || mobile" title="Wii Funkin': Katana Reborn"
+		file="KatanaReborn" packageName="com.katanapeter.pslice" package="com.katanapeter.pslice"
 		main="Main" version="3.2" company="mikolka9144" />
-	<app if="PROFILE_BUILD" title="P-Slice Engine Profiling build" file="PSliceEngine"
-		packageName="com.mikolka9144.testPslice" package="com.mikolka9144.testPslice" main="Main"
+	<app if="PROFILE_BUILD" title="jatana Profilling build" file="Katana Reborn"
+		packageName="com.katanapeter.testPslice" package="com.katanapeter.testPslice" main="Main"
 		version="3.2" company="mikolka9144" />
-	<app if="mobile" unless="PROFILE_BUILD" title="P-Slice Engine" file="PSliceEngine"
-		packageName="com.mikolka9144.pslice" package="com.mikolka9144.pslice" main="Main"
+	<app if="mobile" unless="PROFILE_BUILD" title="Katana Reborn" file="KatanaReborn"
+		packageName="com.katanapeter.pslice" package="com.katanapeter.pslice" main="Main"
 		version="3.2" company="mikolka9144" />
 	<!--Switch
 	Export with Unique ApplicationID and Icon-->

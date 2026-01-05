@@ -1,0 +1,55 @@
+{
+	"animations": [
+		{
+			"offsets": [27, 31],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [120, -10],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [141, 4],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [-63, 115],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [27, 43],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/matt/Wiik2-Matt",
+	"position": [60, 220],
+	"healthicon": "face",
+	"flip_x": false,
+	"healthbar_colors": [161, 161, 161],
+	"camera_position": [80, 0],
+	"sing_duration": 4,
+	"scale": 0.9,
+	"_editor_isPlayer": false
+}

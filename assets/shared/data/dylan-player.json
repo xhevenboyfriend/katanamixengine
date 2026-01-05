@@ -1,0 +1,55 @@
+{
+	"animations": [
+		{
+			"offsets": [0, 0],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "Pico Idle"
+		},
+		{
+			"offsets": [236, 14],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Pico Left"
+		},
+		{
+			"offsets": [0, -80],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Pico Down"
+		},
+		{
+			"offsets": [54, 23],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "Pico Up"
+		},
+		{
+			"offsets": [51, 30],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Pico Right"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/dylan/dylan",
+	"position": [10, 80],
+	"healthicon": "dylan",
+	"flip_x": true,
+	"healthbar_colors": [160, 88, 103],
+	"camera_position": [240, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

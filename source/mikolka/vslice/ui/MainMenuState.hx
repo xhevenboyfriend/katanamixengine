@@ -1,155 +1,190 @@
-package mikolka.vslice.ui;
+package; // Se estiver no P-Slice, talvez precise ser: package mikolka.vslice.ui;
 
+#if desktop
+import Discord.DiscordClient;
+#end
 import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.FlxCamera;
+import flixel.addons.transition.FlxTransitionableState;
+import flixel.effects.FlxFlicker;
+import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
+import flixel.math.FlxMath;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import flixel.effects.FlxFlicker;
-import mikolka.vslice.ui.mainmenu.DesktopMenuState;
-import mikolka.compatibility.ui.MainMenuHooks;
-import mikolka.compatibility.VsliceOptions;
-import mikolka.vslice.ui.title.TitleState;
-import mikolka.compatibility.ModsHelper;
-import options.OptionsState;
+import lime.app.Application;
+import editors.MasterEditorMenu;
+import flixel.input.keyboard.FlxKey;
 
-// Importações de compatibilidade para Psych Engine (Backend)
-#if !LEGACY_PSYCH
-import backend.Paths;
-import backend.MusicBeatState;
-import backend.ClientPrefs;
-import backend.DiscordClient;
-#else
-import Paths;
-import MusicBeatState;
-import ClientPrefs;
-#end
+using StringTools;
 
 class MainMenuState extends MusicBeatState
 {
-	#if !LEGACY_PSYCH
-	public static var psychEngineVersion:String = '1.0.4';
-	#else
-	public static var psychEngineVersion:String = '0.6.3';
-	#end
-	public static var pSliceVersion:String = '3.4';
-	public static var funkinVersion:String = '0.7.6';
-
-	var bg:FlxSprite;
-	var sideBar:FlxSprite;
-	var character:FlxSprite;
-	var header:FlxSprite;
-	var magenta:FlxSprite;
+	public static var psychEngineVersion:String = '0.7.3'; // Ajuste conforme sua versão
+	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
-	var optionShit:Array<String> = ['PLAY', 'FREEPLAY', 'OPTIONS', 'SHOP'];
-	var curSelected:Int = 0;
-	var stickerSubState:Bool;
+	private var camGame:FlxCamera;
+	private var camAchievement:FlxCamera;
+	
+	// Nomes das imagens dos botões na ordem correta
+	var optionShit:Array<String> = [
+		'PLAY',     // 0
+		'FREEPLAY', // 1
+		'OPTIONS',  // 2
+		'SHOP'      // 3
+	];
 
-	public function new(?stickers:Bool = false)
-	{
-		super();
-		stickerSubState = stickers;
-	}
+	var magenta:FlxSprite;
+	var camFollow:FlxObject;
 
 	override function create()
 	{
-		#if DISCORD_ALLOWED
+		#if desktop
+		// Atualiza o Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
-		// Limpeza de cache conforme o seu script original
-		if(stickerSubState) ModsHelper.clearStoredWithoutStickers();
-		else CacheSystem.clearStoredMemory();
-		CacheSystem.clearUnusedMemory();
+		camGame = new FlxCamera();
+		camAchievement = new FlxCamera();
+		camAchievement.bgColor.alpha = 0;
+
+		FlxG.cameras.reset(camGame);
+		FlxG.cameras.add(camAchievement, false);
+		FlxG.cameras.setDefaultDrawTarget(camGame, true);
+
+		transIn = FlxTransitionableState.defaultTransIn;
+		transOut = FlxTransitionableState.defaultTransOut;
 
 		persistentUpdate = persistentDraw = true;
 
-		// 1. Fundo (bg.png)
-		bg = new FlxSprite().loadGraphic(Paths.image('lobbymainmenu/bg'));
-		bg.antialiasing = VsliceOptions.ANTIALIASING;
-		bg.scrollFactor.set(0, 0);
+		// 1. FUNDO (bg.png)
+		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('mainmenu/bg'));
+		bg.scrollFactor.set(0, 0); // Ajuste conforme necessário
+		bg.setGraphicSize(Std.int(bg.width * 1.175));
+		bg.updateHitbox();
 		bg.screenCenter();
+		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
 
-		// 2. Linha Roxa Lateral (line_purple.png)
-		sideBar = new FlxSprite(580, 0).loadGraphic(Paths.image('lobbymainmenu/line_purple'));
-		sideBar.antialiasing = VsliceOptions.ANTIALIASING;
-		sideBar.scrollFactor.set(0, 0);
-		add(sideBar);
+		magenta = new FlxSprite(-80).loadGraphic(Paths.image('mainmenu/bg')); // Reusando BG para efeito rosa
+		magenta.scrollFactor.set(0, 0);
+		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
+		magenta.updateHitbox();
+		magenta.screenCenter();
+		magenta.visible = false;
+		magenta.antialiasing = ClientPrefs.data.antialiasing;
+		magenta.color = 0xFFfd719b;
+		add(magenta);
 
-		// 3. Personagem (nexus.png)
-		character = new FlxSprite(650, 120).loadGraphic(Paths.image('lobbymainmenu/nexus'));
-		character.antialiasing = VsliceOptions.ANTIALIASING;
-		character.scrollFactor.set(0, 0);
-		character.setGraphicSize(Std.int(character.width * 0.85));
-		character.updateHitbox();
-		add(character);
+		// 2. FAIXA ROXA (line_purple.png) - Lado Direito
+		var purpleLine:FlxSprite = new FlxSprite(FlxG.width * 0.5, 0).loadGraphic(Paths.image('mainmenu/line_purple'));
+		purpleLine.antialiasing = ClientPrefs.data.antialiasing;
+		// Ajuste a posição X para ficar igual ao print
+		purpleLine.x = FlxG.width - purpleLine.width + 100; 
+		purpleLine.screenCenter(Y);
+		add(purpleLine);
 
-		// 4. Logo do Menu (menu_display.png) - Lembre-se de renomear o arquivo!
-		header = new FlxSprite(60, 50).loadGraphic(Paths.image('lobbymainmenu/menu_display'));
-		header.antialiasing = VsliceOptions.ANTIALIASING;
-		header.scrollFactor.set(0, 0);
+		// 3. PERSONAGEM (nexus.png) - Lado Direito
+		var charNexus:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('mainmenu/nexus'));
+		charNexus.antialiasing = ClientPrefs.data.antialiasing;
+		charNexus.setGraphicSize(Std.int(charNexus.width * 0.9)); // Ajuste tamanho se precisar
+		charNexus.updateHitbox();
+		// Posicionar sobre a linha roxa
+		charNexus.x = purpleLine.x + (purpleLine.width / 2) - (charNexus.width / 2);
+		charNexus.screenCenter(Y);
+		add(charNexus);
+
+		// 4. CABEÇALHO (display.png) - Topo Esquerdo
+		var header:FlxSprite = new FlxSprite(50, 30).loadGraphic(Paths.image('mainmenu/display'));
+		header.antialiasing = ClientPrefs.data.antialiasing;
 		add(header);
 
-		// 5. Botões (Grid 2x2 como na Screenshot_18)
+		// 5. BOTÕES (Grid 2x2)
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
+
+		// Configuração das posições base
+		var startX:Float = 100;
+		var startY:Float = 200;
+		var paddingX:Float = 320; // Espaço horizontal entre botões
+		var paddingY:Float = 180; // Espaço vertical entre botões
 
 		for (i in 0...optionShit.length)
 		{
 			var menuItem:FlxSprite = new FlxSprite(0, 0);
-			menuItem.loadGraphic(Paths.image('lobbymainmenu/' + optionShit[i]));
-			menuItem.antialiasing = VsliceOptions.ANTIALIASING;
+			menuItem.loadGraphic(Paths.image('mainmenu/' + optionShit[i]));
+			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.ID = i;
 
-			// Lógica de Grid 2x2
-			var col:Int = i % 2;
-			var row:Int = Std.int(i / 2);
-			menuItem.x = 80 + (col * 240);
-			menuItem.y = 280 + (row * 180);
-			
+			// Lógica de Grid:
+			// 0 (Play) e 2 (Options) ficam na esquerda
+			// 1 (Freeplay) e 3 (Shop) ficam na direita
+			var isRightSide:Bool = (i % 2 != 0); // Ímpar = Direita
+			var isBottomRow:Bool = (i >= 2);     // Maior que 1 = Linha de baixo
+
+			menuItem.x = startX + (isRightSide ? paddingX : 0);
+			menuItem.y = startY + (isBottomRow ? paddingY : 0);
+
 			menuItems.add(menuItem);
 		}
 
-		// Textos de Versão (Mantendo o padrão do seu original)
-		var psychVer:FlxText = new FlxText(0, FlxG.height - 18, FlxG.width, "Psych Engine " + psychEngineVersion, 12);
-		var fnfVer:FlxText = new FlxText(0, FlxG.height - 18, FlxG.width, 'v${funkinVersion} (P-slice ${pSliceVersion})', 12);
-		psychVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, OUTLINE, FlxColor.BLACK);
-		fnfVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, OUTLINE, FlxColor.BLACK);
-		psychVer.scrollFactor.set();
-		fnfVer.scrollFactor.set();
-		add(psychVer);
-		add(fnfVer);
+		// Texto de versão
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
+		versionShit.scrollFactor.set();
+		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(versionShit);
 
-		changeSelection();
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
+		versionShit.scrollFactor.set();
+		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(versionShit);
 
-		#if ACHIEVEMENTS_ALLOWED
-		var leDate = Date.now();
-		if (leDate.getDay() == 5 && leDate.getHours() >= 18)
-			MainMenuHooks.unlockFriday();
-		#end
+		changeItem();
 
 		super.create();
-
-		// Suporte para Mobile (Mantido do seu original)
-		#if TOUCH_CONTROLS_ALLOWED
-		if (controls.mobileC)
-			new mobile.states.MobileMenuState(this);
-		#end
 	}
+
+	var selectedSomethin:Bool = false;
 
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music.volume < 0.8)
-			FlxG.sound.music.volume += 0.5 * elapsed;
+		{
+			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
+			if(FreeplayState.vocals != null) FreeplayState.vocals.volume += 0.5 * elapsed;
+		}
 
 		if (!selectedSomethin)
 		{
-			if (controls.UI_LEFT_P) changeSelection(-1);
-			if (controls.UI_RIGHT_P) changeSelection(1);
-			if (controls.UI_UP_P) changeSelection(-2);
-			if (controls.UI_DOWN_P) changeSelection(2);
+			// Controles de Grade (Grid)
+			if (controls.UI_UP_P)
+			{
+				FlxG.sound.play(Paths.sound('scrollMenu'));
+				changeItem(-2); // Pula 2 para trás (sobe uma linha)
+			}
+
+			if (controls.UI_DOWN_P)
+			{
+				FlxG.sound.play(Paths.sound('scrollMenu'));
+				changeItem(2); // Pula 2 para frente (desce uma linha)
+			}
+
+			if (controls.UI_LEFT_P)
+			{
+				FlxG.sound.play(Paths.sound('scrollMenu'));
+				changeItem(-1); // Vai para esquerda
+			}
+
+			if (controls.UI_RIGHT_P)
+			{
+				FlxG.sound.play(Paths.sound('scrollMenu'));
+				changeItem(1); // Vai para direita
+			}
 
 			if (controls.BACK)
 			{
@@ -160,56 +195,92 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.ACCEPT)
 			{
-				selectItem();
+				if (optionShit[curSelected] == 'donate')
+				{
+					// Link de doação se necessário
+				}
+				else
+				{
+					selectedSomethin = true;
+					FlxG.sound.play(Paths.sound('confirmMenu'));
+
+					if(ClientPrefs.data.flashing) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
+
+					menuItems.forEach(function(spr:FlxSprite)
+					{
+						if (curSelected != spr.ID)
+						{
+							FlxTween.tween(spr, {alpha: 0}, 0.4, {
+								ease: FlxEase.quadOut,
+								onComplete: function(twn:FlxTween)
+								{
+									spr.kill();
+								}
+							});
+						}
+						else
+						{
+							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
+							{
+								var daChoice:String = optionShit[curSelected];
+
+								switch (daChoice)
+								{
+									case 'PLAY':
+										MusicBeatState.switchState(new StoryMenuState());
+									case 'FREEPLAY':
+										MusicBeatState.switchState(new FreeplayState());
+									case 'OPTIONS':
+										// Ajuste para P-Slice ou Engine padrão
+										MusicBeatState.switchState(new options.OptionsState());
+									case 'SHOP':
+										// MusicBeatState.switchState(new ShopState());
+										trace("Shop ainda não implementado!");
+										selectedSomethin = false; // Retorna controle se não tiver Shop
+								}
+							});
+						}
+					});
+				}
 			}
+			#if desktop
+			else if (FlxG.keys.anyJustPressed(debugKeys))
+			{
+				selectedSomethin = true;
+				MusicBeatState.switchState(new MasterEditorMenu());
+			}
+			#end
 		}
 
 		super.update(elapsed);
 	}
 
-	var selectedSomethin:Bool = false;
-
-	function selectItem()
+	function changeItem(huh:Int = 0)
 	{
-		selectedSomethin = true;
-		FlxG.sound.play(Paths.sound('confirmMenu'));
+		curSelected += huh;
 
-		FlxFlicker.flicker(menuItems.members[curSelected], 1, 0.06, false, false, function(flick:FlxFlicker)
-		{
-			var daChoice:String = optionShit[curSelected];
-			switch (daChoice)
-			{
-				case 'PLAY':
-					// Coloque aqui o estado do Story Mode ou Campanha
-				case 'FREEPLAY':
-					MusicBeatState.switchState(new mikolka.vslice.freeplay.FreeplayState());
-				case 'OPTIONS':
-					MusicBeatState.switchState(new OptionsState());
-				case 'SHOP':
-					// Estado da Loja
-					selectedSomethin = false; 
-			}
-		});
-	}
-
-	function changeSelection(change:Int = 0)
-	{
-		curSelected += change;
-		if (curSelected < 0) curSelected = optionShit.length - 1;
-		if (curSelected >= optionShit.length) curSelected = 0;
+		// Lógica de loop da grade
+		if (curSelected >= menuItems.length)
+			curSelected = curSelected % menuItems.length; // Volta para o início
+		if (curSelected < 0)
+			curSelected = menuItems.length + curSelected; // Vai para o fim
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
-			spr.alpha = 0.5;
-			spr.scale.set(0.9, 0.9);
+			spr.updateHitbox();
+
 			if (spr.ID == curSelected)
 			{
+				// Item Selecionado: 100% visível e um pouco maior
 				spr.alpha = 1;
-				spr.scale.set(1.05, 1.05);
+				spr.scale.set(1.05, 1.05); 
 			}
-			spr.updateHitbox();
+			else
+			{
+				// Item Não Selecionado: 60% visível
+				spr.alpha = 0.6;
+				spr.scale.set(1, 1);
+			}
 		});
-
-		if (change != 0) FlxG.sound.play(Paths.sound('scrollMenu'));
 	}
 }

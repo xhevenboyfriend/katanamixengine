@@ -35,24 +35,24 @@ class MainMenuState extends MusicBeatState
 	public function new(?stickers:Bool = false)
 	{
 		super();
-		stickerSubState = stickers; [cite: 5]
+		stickerSubState = stickers;
 	}
 
 	override function create()
 	{
 		#if DISCORD_ALLOWED
-		DiscordClient.changePresence("In the Menus", null); [cite: 7]
+		DiscordClient.changePresence("In the Menus", null);
 		#end
 
-		if(stickerSubState) ModsHelper.clearStoredWithoutStickers(); [cite: 6]
-		else CacheSystem.clearStoredMemory(); [cite: 6]
-		CacheSystem.clearUnusedMemory(); [cite: 6]
+		if(stickerSubState) ModsHelper.clearStoredWithoutStickers();
+		else CacheSystem.clearStoredMemory();
+		CacheSystem.clearUnusedMemory();
 
 		persistentUpdate = persistentDraw = true;
 
 		// 1. Fundo (assets/shared/images/lobbymainmenu/bg.png)
-		bg = new FlxSprite().loadGraphic(Paths.image('lobbymainmenu/bg')); [cite: 7]
-		bg.antialiasing = VsliceOptions.ANTIALIASING; [cite: 8]
+		bg = new FlxSprite().loadGraphic(Paths.image('lobbymainmenu/bg'));
+		bg.antialiasing = VsliceOptions.ANTIALIASING;
 		bg.screenCenter();
 		add(bg);
 
@@ -125,7 +125,7 @@ class MainMenuState extends MusicBeatState
 				case 'FREEPLAY':
 					MusicBeatState.switchState(new mikolka.vslice.freeplay.FreeplayState());
 				case 'OPTIONS':
-					MusicBeatState.switchState(new OptionsState()); [cite: 13]
+					MusicBeatState.switchState(new OptionsState());
 			}
 		}
 		super.update(elapsed);

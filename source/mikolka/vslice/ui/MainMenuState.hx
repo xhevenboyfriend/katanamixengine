@@ -25,12 +25,12 @@ class MainMenuState extends MusicBeatState
 	var sideBar:FlxSprite;
 	var character:FlxSprite;
 	var header:FlxSprite;
-	var magenta:FlxSprite; [cite: 5]
+	var magenta:FlxSprite;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	var optionShit:Array<String> = ['PLAY', 'FREEPLAY', 'OPTIONS', 'SHOP'];
 	var curSelected:Int = 0;
-	var stickerSubState:Bool; [cite: 5]
+	var stickerSubState:Bool;
 
 	public function new(?stickers:Bool = false)
 	{

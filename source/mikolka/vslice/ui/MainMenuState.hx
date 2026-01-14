@@ -18,8 +18,8 @@ import backend.DiscordClient;
 class MainMenuState extends MusicBeatState
 {
 	public static var psychEngineVersion:String = '0.6.3'; 
-	public static var pSliceVersion:String = '3.4'; [cite: 4]
-	public static var funkinVersion:String = '0.7.6'; [cite: 4]
+	public static var pSliceVersion:String = '3.4';
+	public static var funkinVersion:String = '0.7.6';
 
 	var bg:FlxSprite;
 	var sideBar:FlxSprite;
